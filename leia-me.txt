@@ -1,0 +1,3 @@
+Não abrir no Internet Explorer, de preferênica Google Chrome.
+
+bootstrap e jquery é opcional, serve apenas para abrir o pdf com estilo... não tive coragem de fazer em puro javascript.

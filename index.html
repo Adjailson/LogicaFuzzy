@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Lógica Fuzzy</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no"/>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/fuzzy.js"></script>
+    <script type="text/javascript" src="js/eventos.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style>
+    	@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+    	*{font-family: 'Questrial', sans-serif;}
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<h1 style="text-align: center; margin: 20px;">Sis. de Irrigação - Fuzzy</h1>
+
+		<div class="d-flex flex-row bd-highlight mb-3 alert alert-light">
+			<div class="p-2 bd-highlight alert">
+
+				<label id="valorRotacao">Rotação do Motor (rpm): <strong class="text-white bg-dark">1800</strong> </label><br>
+				<input type="range" class="custom-range" id="txtRotacao" min="1800" max="3600" value="1800" step="10" style="max-width: 200px;" onchange="rolagemRotacao()" /><br>
+
+				<label id="valorTemperatura">Temperatura do Motor (ºC): <strong class="text-white bg-dark">40</strong> </label><br>
+				<input type="range" class="custom-range" id="txtTemperatura" min="5" max="200" value="40" step="1" style="max-width: 200px;" onchange="rolagemTemperatura()" /><br>
+
+				<label id="valorMetragem">Metragem dos Canos (M): <strong class="text-white bg-dark">100</strong> </label><br>
+				<input type="range" class="custom-range" id="txtMetragem" min="100" max="290" value="100" step="2" style="max-width: 200px;" onchange="rolagemMetragem()" /><br>
+
+				<button type="button" onclick="exercutar()" class="btn btn-success">Exercutar</button>
+
+			</div>
+			<div class="p-2 bd-highlight">
+				<div id="desfuzificacao"></div>
+			</div>
+		</div>
+
+		<div class="alert alert-success" id="fuzificacao"></div>
+		<div class="alert alert-dark" id="raciocinio"></div>
+		<br><br>
+
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".termo-uso">Visualizar documento</button><br><br>
+
+		<div class="modal fade termo-uso" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+	      <div class="modal-dialog modal-xl">
+	        <div class="modal-content">
+
+	          <div class="modal-header">
+	            <h5 class="modal-title">Detalhes dos Gráficos</h5>
+	            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+	              <span aria-hidden="true">&times;</span>
+	            </button>
+	          </div>
+	          
+	          <object type="application/pdf" data="infor-projeto.pdf" width="100%" height="500">Não encontrado!</object>
+
+	        </div>
+	      </div>
+	    </div>
+	</div>
+</body>
+</html>
